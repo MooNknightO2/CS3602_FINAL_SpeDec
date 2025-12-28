@@ -1,5 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from specSampling import specSampling
+from regrSampling import regrSampling
 import torch
 
 p_model_path = "./models/pythia-2.8b"
@@ -22,15 +23,25 @@ text = "Computer science is"
 inputs = tokenizer(text, return_tensors="pt")
 prefix = inputs["input_ids"].to(device)
 
+result = regrSampling(
+    x=prefix,
+    model=q_model,
+    maxLen=200,
+    temperature=0.85,
+    top_p=0.9
+)
+output_text = tokenizer.decode(result[0], skip_special_tokens=True)
+print(output_text)
+
 result = specSampling(
     prefix=prefix,
     q_model=q_model,
     p_model=p_model,
-    maxLen=1000,
+    maxLen=200,
     gamma=4,
-    temperature=0.8,
+    temperature=0.85,
     top_p=0.9
 )
-
 output_text = tokenizer.decode(result[0], skip_special_tokens=True)
 print(output_text)
+
