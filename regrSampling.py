@@ -5,8 +5,8 @@ from utils import norm_logits, sample
 @torch.no_grad()
 def regrSampling(x: torch.Tensor, model: torch.nn.Module, maxLen: int, 
                  temperature: float = 1, top_k: int = 0, top_p: float = 0):
-    n = len(x)
-    T = len(x) + maxLen
+    n = x.shape[1]
+    T = n + maxLen
     with tqdm(total=T, desc="regrSampling") as pbar:
         while n < T:
             outputs = model(x)
