@@ -225,3 +225,4 @@ models/pythia-70m/pytorch_model.bin
 models/pythia-70m/special_tokens_map.json
 models/pythia-70m/tokenizer_config.json
 models/pythia-70m/tokenizer.json
+datasets/pg19_sample/pg19_sample.txt
