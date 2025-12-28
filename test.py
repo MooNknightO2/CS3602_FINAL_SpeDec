@@ -25,7 +25,7 @@ prefix = inputs["input_ids"].to(device)
 
 result = regrSampling(
     x=prefix,
-    model=q_model,
+    model=p_model,
     maxLen=200,
     temperature=0.85,
     top_p=0.9
