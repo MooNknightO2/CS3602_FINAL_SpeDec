@@ -55,11 +55,12 @@ CS3602_FINAL_SpeDec/
    - 运行 `downloadData.py` 下载 WikiText-2 和 PG-19 数据集。
    - 运行 `downloadModel.py` 下载 Pythia-70m 和 Pythia-2.8b 模型。
 2. 基准测试(Speed):
-   - 配置`maxLen=200`, `gamma=4`
+   - 配置`maxLen=200`, `gamma=4`, `speed=1`
    - 分别测试small(70m), target(2.8b)模型的标准自回归推理速度
    - 测试spec(Speculative)模式下的推理速度
    - 记录TTFT(首字延迟)，TPOT(每个Token平均时间)和Throughput(吞吐量)
 3. 困惑度测试(PPL):
+   - 配置`ppl=1`
    - 通过`PPL.py`计算目标模型在WikiText-2数据集上的困惑度, 验证投机采样输出分布一致性
 
 ## 实验结果与分析
