@@ -226,3 +226,11 @@ models/pythia-70m/special_tokens_map.json
 models/pythia-70m/tokenizer_config.json
 models/pythia-70m/tokenizer.json
 datasets/pg19_sample/pg19_sample.txt
+models/pythia-410m/.gitattributes
+models/pythia-410m/config.json
+models/pythia-410m/model.safetensors
+models/pythia-410m/pytorch_model.bin
+models/pythia-410m/README.md
+models/pythia-410m/special_tokens_map.json
+models/pythia-410m/tokenizer_config.json
+models/pythia-410m/tokenizer.json
